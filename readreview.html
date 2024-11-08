@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .product-image img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+        }
+
+        .product-details {
+            margin-left: 20px;
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .product-rating {
+            font-size: 14px;
+            color: #ff9900;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 28px;
+            color: #b12704;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .buy-now-button {
+            background-color: #ff9900;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .buy-now-button:hover {
+            background-color: #f2ff01;
+        }
+    </style>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Amazon Product Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="product-image">
+                <img src="/staic/{{item_data[5]}}" alt="Product Name">
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Product Name:{{item_data[1]}}</h1>
+                <h1 class="product-title">Item_Id:{{item_data[0]}}</h1>
+                <h1 class="product-title">Description :{{item_data[2]}}</h1>
+                <h1 class="product-title">Category:{{item_data[4]}}</h1>
+                <h1 class="product-title">Price:{{item_data[3]}}</h1>
+                {% if session.get('uemail') %}
+                <a href="{{url_for('addreview')}}"><button class="buy-now-success">Add review</button></a>
+                {% endif %}
+                <button class="buy-now-button">Buy Now</button>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+        {% for i in data %}
+        <h1 class="product-title">Username:{{i[0]}}</h1>
+        <h1 class="product-title">title:{{i[2]}}</h1>
+        <h1 class="product-title">Review:{{i[3]}}</h1>
+        <h1 class="product-title">Rating:{{i[4]}}</h1>
+        <h1 class="product-title">Date:{{i[5]}}</h1>
+        {% endfor %}
+    </body>
+
+    </html>
+
+</body>
+
+</html>

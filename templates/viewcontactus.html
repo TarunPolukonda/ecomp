@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for i in data %}
+    <table>
+        <tr>
+        <th>name</th>
+        <th>email</th>
+        <th>message</th>
+        </tr>
+        <tr>
+            <th>{{i[0]}}</th>
+            <th>{{i[1]}}</th>
+            <th>{{i[2]}}</th>
+        </tr>
+    </table>
+    {% endfor %}
+</body>
+</html>
